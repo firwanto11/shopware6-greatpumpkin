@@ -1,0 +1,23 @@
+// <plugin root>/src/Resources/app/administration/src/module/sw-cms/blocks/text-image/gp-achievement-list/component/sw-cms-block-gp-achievement-list.scss
+.sw-cms-block-gp-achievement-list {
+  display: flex;
+  flex-direction: column;
+
+  .sw-cms-el-text {
+    padding: 20px;
+  }
+
+  .sw-cms-el-image.is--cover {
+    min-height: 200px;
+  }
+
+  .sw-cms-block-gp-achievement-list__top,
+  .sw-cms-block-gp-achievement-list__main {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 20%);
+  }
+  .sw-cms-block-gp-achievement-list__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

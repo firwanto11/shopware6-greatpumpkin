@@ -1,0 +1,112 @@
+.gp-news {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+
+  &__wrapper {
+    @media screen and (min-width: 992px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  &__ornament {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(20%, 20%);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+
+    .page--news & {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .arrow-down {
+    margin-bottom: 60px;
+  }
+}
+
+.gp-article {
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0px 0px 7.7px 1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 48px;
+  height: 100%;
+
+  .blog-image {
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  // content
+  .blog-title {
+    margin-bottom: 8px;
+    border: none;
+
+    a {
+      color: #000;
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 120%;
+      letter-spacing: -0.75px;
+      margin-bottom: 8px;
+      text-decoration: none;
+    }
+  }
+
+  .card-text {
+    color: #acabab;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.6px;
+    &:empty {
+      display: none;
+    }
+  }
+
+  .blog-date,
+  .card-footer {
+    display: none !important;
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    width: max-content;
+    color: #fff;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100.636%;
+    letter-spacing: -0.45px;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    background-color: #f97231;
+    border-radius: 45px;
+    box-shadow: 0px 0px 7.7px 1px rgba(0, 0, 0, 0.1);
+    margin-top: 8px;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: #dfdfdf;
+    }
+  }
+}

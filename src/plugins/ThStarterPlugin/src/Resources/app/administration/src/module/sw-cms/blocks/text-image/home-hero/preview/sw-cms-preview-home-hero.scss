@@ -1,0 +1,7 @@
+// <plugin root>/src/Resources/app/administration/src/module/sw-cms/blocks/text-image/home-hero/preview/sw-cms-preview-home-hero.scss
+.sw-cms-preview-home-hero {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 20px;
+	padding: 15px;
+}

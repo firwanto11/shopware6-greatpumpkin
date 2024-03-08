@@ -1,0 +1,29 @@
+<div class="gp-achievement-list">
+	<div class="row">
+		<div class="col-lg-6">
+
+			<div class="row gp-achievment-list__row">
+				{% set element = block.slots.getSlot('achievements') %}
+				{% if element %}
+					{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+				{% endif %}
+			</div>
+			<div class="gp-achievement-list__long-text">
+				{% set element = block.slots.getSlot('long-text') %}
+				{% if element %}
+					<div data-cms-element-id="{{ element.id }}">
+						{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+					</div>
+				{% endif %}
+
+			</div>
+		</div>
+	</div>
+	{% set element = block.slots.getSlot('main-image') %}
+	{% if element %}
+		<div data-cms-element-id="{{ element.id }}" class="gp-achievement-list__image">
+			{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+		</div>
+	{% endif %}
+</div>
+{# TODO: responsive, refactor, and styling #}

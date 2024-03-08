@@ -1,0 +1,14 @@
+<!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+{% block sw_cms_block_gp_achievement_list %}
+	<div class="sw-cms-block-gp-achievement-list">
+		<div class="sw-cms-block-gp-achievement-list__top">
+			<slot name="achievements"></slot>
+		</div>
+
+		<div class="sw-cms-block-gp-achievement-list__main">
+			<slot name="long-text"></slot>
+			<slot name="main-image"></slot>
+		</div>
+	</div>
+{% endblock %}
+{# TODO: Admin styling for preview component & editor #}

@@ -1,0 +1,27 @@
+{
+  "name": "th-starter-plugin/th-starter-plugin",
+  "description": "Think11 Starter Plugins",
+  "type": "shopware-platform-plugin",
+  "version": "1.0.8",
+  "license": "MIT",
+  "require": {
+    "shopware/core": "6.5.*"
+  },
+  "extra": {
+    "shopware-plugin-class": "ThStarterPlugin\\ThStarterPlugin",
+    "label": {
+      "de-DE": "Think11 Starter Plugins",
+      "en-GB": "Think11 Starter Plugins"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "ThStarterPlugin\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ThStarterPlugin\\Tests\\": "tests/"
+    }
+  }
+}

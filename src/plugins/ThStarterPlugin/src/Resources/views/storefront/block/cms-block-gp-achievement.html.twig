@@ -1,0 +1,70 @@
+<div class="gp-achievement-card">
+	<div class="arrow-down arrow-down--green">
+		<div class="arrow-down__wrapper">
+			<span>
+				{% sw_include '@ThStarterPlugin/storefront/block/icon-down-green.html.twig' %}
+			</span>
+			<span class="arrow-down__label">Award Winning</span>
+		</div>
+	</div>
+	<div class="row">
+
+
+		<div class="col-6">
+			<div class="gp-achievement-card__item">
+				{% set element = block.slots.getSlot('left-image') %}
+				{% if element %}
+					<div data-cms-element-id="{{ element.id }}">
+						{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+					</div>
+				{% endif %}
+
+				{% set element = block.slots.getSlot('left-text') %}
+				{% if element %}
+					<div data-cms-element-id="{{ element.id }}">
+						{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+
+		<div class="col-6">
+			<div class="gp-achievement-card__item">
+				{% set element = block.slots.getSlot('center-image') %}
+				{% if element %}
+					<div data-cms-element-id="{{ element.id }}">
+						{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+					</div>
+				{% endif %}
+
+				{% set element = block.slots.getSlot('center-text') %}
+
+				{% if element %}
+					<div data-cms-element-id="{{ element.id }}">
+						{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+
+		<div class="col-6">
+			<div class="gp-achievement-card__item">
+				{% set element = block.slots.getSlot('right-image') %}
+				{% if element %}
+					<div data-cms-element-id="{{ element.id }}">
+						{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+					</div>
+				{% endif %}
+
+				{% set element = block.slots.getSlot('right-text') %}
+				{% if element %}
+					<div data-cms-element-id="{{ element.id }}">
+						{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+{# TODO: responsive, refactor, and styling #}

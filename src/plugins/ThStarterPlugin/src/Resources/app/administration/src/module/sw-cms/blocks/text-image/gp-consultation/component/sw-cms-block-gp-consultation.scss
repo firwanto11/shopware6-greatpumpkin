@@ -1,0 +1,6 @@
+// <plugin root>/src/Resources/app/administration/src/module/sw-cms/blocks/text-image/gp-product/contactnt/sw-cms-block-gp-product.contactss
+.sw-cms-block-gp-contact {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 40px;
+}

@@ -1,0 +1,7 @@
+// <plugin root>/src/Resources/app/administration/src/module/sw-cms/blocks/text-image/image-text-reversed/preview/sw-cms-preview-image-text-reversed.scss
+.sw-cms-preview-image-text-reversed {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 20px;
+	padding: 15px;
+}

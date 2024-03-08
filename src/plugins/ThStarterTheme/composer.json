@@ -1,0 +1,19 @@
+{
+  "name": "swag/theme-skeleton",
+  "description": "Great Pumpkins Theme",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "version": "1.0.7",
+  "autoload": {
+    "psr-4": {
+      "ThStarterTheme\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "ThStarterTheme\\ThStarterTheme",
+    "label": {
+      "de-DE": "Theme Great Pumpkins",
+      "en-GB": "Theme Great Pumpkins"
+    }
+  }
+}

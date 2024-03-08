@@ -1,0 +1,6 @@
+// <plugin root>/src/Resources/app/administration/src/module/sw-cms/blocks/text-image/home-hero/component/sw-cms-block-home-hero.scss
+.sw-cms-block-home-hero {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 40px;
+}

@@ -1,0 +1,44 @@
+notes :
+https://dev.to/percoguru/getting-started-with-apis-in-golang-feat-fiber-and-gorm-2n34#database
+
+
+
+-sms gateway jalan (library sms)
+-jwt sudah jalan
+
+untuk input kode otp :
+  https://pub.dev/packages/flutter_otp_text_field
+
+
+supaya image ke load di browser
+flutter run -d chrome --web-renderer html
+
+to run while inspect :
+flutter run --track-widget-creation
+
+
+untu rerender server :
+git pull
+sudo docker-compose down
+sudo docker-compose build
+sudo docker-compose up -d
+
+
+-untuk load image pakai :
+  ImageNetworkURL(String url,BuildContext context,double height)
+
+
+eval $(ssh-agent)
+ssh-add msd_racknerd
+BZ-123
+
+
+
+untuk process insert,update,delete cart
+//call pr_updatecart('B-B01136','I', '11263', 1, 1000, 2, 0);
+
+untuk nampilkan cart
+//select * from fc_viewchart('J-B01136','',0);
+
+one signal :
+https://pkg.go.dev/github.com/tbalthazar/onesignal-go

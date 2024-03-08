@@ -1,0 +1,4 @@
+node_modules
+src/plugins/SasBlogModule/src/Resources/public
+src/plugins/SasBlogModule/src/Resources/public/administration/css
+src/plugins/SasBlogModule/src/Resources/public/administration/js
