@@ -1,0 +1,174 @@
+<div class="gp-affiliate">
+	<div class="gp-affiliate__wrapper container">
+		<div class="arrow-down arrow-down--white">
+			<div class="arrow-down__wrapper">
+				<span>
+					{% sw_include '@ThStarterPlugin/storefront/block/icon-down-white.html.twig' %}
+				</span>
+				<span class="arrow-down__label">Voucher Promotion</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="gp-affiliate__item">
+					{% set element = block.slots.getSlot('first-image') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}" class="gp-affiliate__item-image">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+					{% set element = block.slots.getSlot('first-text') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="gp-affiliate__item">
+					{% set element = block.slots.getSlot('second-image') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}" class="gp-affiliate__item-image">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+					{% set element = block.slots.getSlot('second-text') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="gp-affiliate__item">
+					{% set element = block.slots.getSlot('third-image') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}" class="gp-affiliate__item-image">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+					{% set element = block.slots.getSlot('third-text') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="gp-affiliate__item">
+					{% set element = block.slots.getSlot('fourth-image') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}" class="gp-affiliate__item-image">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+					{% set element = block.slots.getSlot('fourth-text') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="gp-affiliate__item">
+					{% set element = block.slots.getSlot('fifth-image') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}" class="gp-affiliate__item-image">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+					{% set element = block.slots.getSlot('fifth-text') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="gp-affiliate__item">
+					{% set element = block.slots.getSlot('six-image') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}" class="gp-affiliate__item-image">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+					{% set element = block.slots.getSlot('six-text') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="gp-affiliate__item">
+					{% set element = block.slots.getSlot('seventh-image') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}" class="gp-affiliate__item-image">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+					{% set element = block.slots.getSlot('seventh-text') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="gp-affiliate__item">
+					{% set element = block.slots.getSlot('eight-image') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}" class="gp-affiliate__item-image">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+					{% set element = block.slots.getSlot('eight-text') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="gp-affiliate__item">
+					{% set element = block.slots.getSlot('ninth-image') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}" class="gp-affiliate__item-image">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+					{% set element = block.slots.getSlot('ninth-text') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="gp-affiliate__item">
+					{% set element = block.slots.getSlot('ten-image') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}" class="gp-affiliate__item-image">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+					{% set element = block.slots.getSlot('ten-text') %}
+					{% if element %}
+						<div data-cms-element-id="{{ element.id }}">
+							{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

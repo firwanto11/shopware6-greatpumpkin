@@ -1,0 +1,116 @@
+<div class="gp-products">
+	<div class="gp-products__lists">
+		{% set element = block.slots.getSlot('products') %}
+		<div class="row">
+			{% for item in element.data.products.elements %}
+				<div class="col col-lg-4 col-md-6 col-12">
+					{% set name = item.translated.name %}
+					{% set id = item.id %}
+					{% set cover = item.cover.media %}
+					<div class="gp-products__item {% if name|lower == 'consultation service' %}gp-products__item--digital{% endif %}">
+						{% if name|lower == 'consultation service' %}
+							<a href="{{ seoUrl('frontend.detail.page', {'productId': item.id}) }}" class="gp-products__item-link" title="{{ item.name }}">
+								<div class="gp-products__item-wrapper">
+									<div class="gp-products__item-image">
+										{% if cover.url %}
+											{% set attributes = {
+										'class': 'product-image is-'~displayMode,
+										'alt': (cover.translated.alt ?: name),
+										'title': (cover.translated.title ?: name)
+								} %}
+
+											{% if displayMode == 'cover' or displayMode == 'contain' %}
+												{% set attributes = attributes|merge({ 'data-object-fit': displayMode }) %}
+											{% endif %}
+
+											{% sw_thumbnails 'product-image-thumbnails' with {
+										media: cover,
+										sizes: {
+												'xs': '501px',
+												'sm': '315px',
+												'md': '427px',
+												'lg': '333px',
+												'xl': '284px'
+										}
+								} %}
+										{% else %}
+											<div class="product-image-placeholder">
+												{% sw_icon 'placeholder' style {
+											'size': 'fluid'
+									} %}
+											</div>
+										{% endif %}
+									</div>
+									<div class="gp-products__item-content">
+										<div class="gp-products__item-name">
+											{{ item.name }}
+										</div>
+
+										<div class="gp-products__item-grid">
+											<div class="gp-products__item-price">
+												US$
+												{{ item.calculatedPrice.unitPrice }}
+											</div>
+											<button class="gp-products__item-button">Buy Now</button>
+										</div>
+									</div>
+								</div>
+							</a>
+						{% else %}
+							<a href="{{ seoUrl('frontend.detail.page', {'productId': item.id}) }}" class="gp-products__item-link" title="{{ item.name }}">
+								<div class="gp-products__item-wrapper">
+
+									<div class="gp-products__item-name">
+										{{ item.name }}
+									</div>
+									<div class="gp-products__item-grid">
+										<div class="gp-products__item-price">
+											US$
+											{{ item.calculatedPrice.unitPrice }}
+										</div>
+										<button class="gp-products__item-button">Buy Now</button>
+									</div>
+									<div class="gp-products__item-stock">
+										{{ item.stock > 40 ? 'In Stock' : 'Low Inventory' }}
+									</div>
+								</div>
+								<div class="gp-products__item-image">
+									{% if cover.url %}
+										{% set attributes = {
+										'class': 'product-image is-'~displayMode,
+										'alt': (cover.translated.alt ?: name),
+										'title': (cover.translated.title ?: name)
+								} %}
+
+										{% if displayMode == 'cover' or displayMode == 'contain' %}
+											{% set attributes = attributes|merge({ 'data-object-fit': displayMode }) %}
+										{% endif %}
+
+										{% sw_thumbnails 'product-image-thumbnails' with {
+										media: cover,
+										sizes: {
+												'xs': '501px',
+												'sm': '315px',
+												'md': '427px',
+												'lg': '333px',
+												'xl': '284px'
+										}
+								} %}
+									{% else %}
+										<div class="product-image-placeholder">
+											{% sw_icon 'placeholder' style {
+											'size': 'fluid'
+									} %}
+										</div>
+									{% endif %}
+								</div>
+							</a>
+						{% endif %}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+{# TODO: responsive, refactor, and styling #}

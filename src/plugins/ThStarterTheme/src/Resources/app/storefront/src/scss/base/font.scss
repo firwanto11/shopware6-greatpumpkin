@@ -1,0 +1,61 @@
+$app-css-relative-asset-path: '../assets' !default;
+
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('#{$app-css-relative-asset-path}/font/poppins/poppins-semibold.eot');
+	/* IE9 Compat Modes */
+	src: local(''),
+	url('#{$app-css-relative-asset-path}/font/poppins/poppins-semibold.eot?#iefix') format('embedded-opentype'),
+	/* IE6-IE8 */
+	url('#{$app-css-relative-asset-path}/font/poppins/poppins-semibold.woff2') format('woff2'),
+	/* Super Modern Browsers */
+	url('#{$app-css-relative-asset-path}/font/poppins/poppins-semibold.woff') format('woff'),
+	/* Modern Browsers */
+	url('#{$app-css-relative-asset-path}/font/poppins/poppins-semibold.ttf') format('truetype'),
+	/* Safari, Android, iOS */
+	url('#{$app-css-relative-asset-path}/font/poppins/poppins-semibold.svg#Poppins') format('svg');
+	/* Legacy iOS */
+}
+
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('#{$app-css-relative-asset-path}/font/poppins/poppins-regular.eot');
+	/* IE9 Compat Modes */
+	src: local(''),
+	url('#{$app-css-relative-asset-path}/font/poppins/poppins-regular.eot?#iefix') format('embedded-opentype'),
+	/* IE6-IE8 */
+	url('#{$app-css-relative-asset-path}/font/poppins/poppins-regular.woff2') format('woff2'),
+	/* Super Modern Browsers */
+	url('#{$app-css-relative-asset-path}/font/poppins/poppins-regular.woff') format('woff'),
+	/* Modern Browsers */
+	url('#{$app-css-relative-asset-path}/font/poppins/poppins-regular.ttf') format('truetype'),
+	/* Safari, Android, iOS */
+	url('#{$app-css-relative-asset-path}/font/poppins/poppins-regular.svg#Poppins') format('svg');
+	/* Legacy iOS */
+}
+
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url('#{$app-css-relative-asset-path}/font/poppins/poppins-bold.eot');
+	/* IE9 Compat Modes */
+	src: local(''),
+	url('#{$app-css-relative-asset-path}/font/poppins/poppins-bold.eot?#iefix') format('embedded-opentype'),
+	/* IE6-IE8 */
+	url('#{$app-css-relative-asset-path}/font/poppins/poppins-bold.woff2') format('woff2'),
+	/* Super Modern Browsers */
+	url('#{$app-css-relative-asset-path}/font/poppins/poppins-bold.woff') format('woff'),
+	/* Modern Browsers */
+	url('#{$app-css-relative-asset-path}/font/poppins/poppins-bold.ttf') format('truetype'),
+	/* Safari, Android, iOS */
+	url('#{$app-css-relative-asset-path}/font/poppins/poppins-bold.svg#Poppins') format('svg');
+	/* Legacy iOS */
+}

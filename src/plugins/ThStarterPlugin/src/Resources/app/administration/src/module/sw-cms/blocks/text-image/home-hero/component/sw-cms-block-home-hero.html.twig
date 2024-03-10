@@ -1,0 +1,19 @@
+{# <plugin root>/src/Resources/app/administration/src/module/sw-cms/blocks/text-image/home-hero/component/sw-cms-block-home-hero.html.twig #}
+{% block sw_cms_block_home_hero %}
+	<div class="sw-cms-block-home-hero">
+		<slot name="media">
+			{% block sw_cms_block_home_hero_slot_media %}{% endblock %}
+		</slot>
+		<slot name="subtitle">
+			{% block sw_cms_block_home_hero_slot_subtitle %}{% endblock %}
+		</slot>
+		<slot name="title">
+			{% block sw_cms_block_home_hero_slot_title %}{% endblock %}
+		</slot>
+		<slot name="paragraph">
+			{% block sw_cms_block_home_hero_slot_paragraph %}{% endblock %}
+		</slot>
+	</div>
+{% endblock %}
+
+{# TODO: Admin styling for preview component & editor #}

@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  shop:
+    container_name: shop
+    image: dockware/dev:latest
+    ports:
+      - "22:22" # ssh
+      - "80:80" # apache2
+      - "443:443" # apache2 https
+      - "8888:8888" # watch admin
+      - "9998:9998" # watch storefront proxy
+      - "9999:9999" # watch storefront
+      - "3309:3306" # mysql port
+    volumes:
+      - "db_volume:/var/lib/mysql"
+      - "./src/plugins/SasBlogModule:/var/www/html/custom/plugins/SasBlogModule"
+      - "./src/plugins/ThStarterTheme:/var/www/html/custom/plugins/ThStarterTheme"
+      - "./src/plugins/ThStarterPlugin:/var/www/html/custom/plugins/ThStarterPlugin"
+    networks:
+      - web
+    environment:
+      - XDEBUG_ENABLED=0
+
+## ***********************************************************************
+##  VOLUME
+## ***********************************************************************
+volumes:
+  db_volume:
+    driver: local
+## ***********************************************************************
+##  NETWORKS
+## ***********************************************************************
+networks:
+  web:
+    external: false

@@ -1,0 +1,48 @@
+<div class="home-hero__container">
+	<div class="row">
+		<div class="col-12 col-lg-6 home-hero__image-column" data-cms-element-id="{{ id }}">
+			<div class="home-hero__image-wrapper">
+				{% set element = block.slots.getSlot('media') %}
+				{# Image #}
+				{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+				<div class="home-hero__badge-wrapper">
+					<img class="home-hero__badge" src="{{ asset('bundles/thstarterplugin/gwr-logo.png', 'asset') }}">
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-lg-6 home-hero__text-column" data-cms-element-id="{{ id }}">
+			<div class="home-hero__text-wrapper">
+				{% set element = block.slots.getSlot('subtitle') %}
+				{# subtitle #}
+				<div class="home-hero__text-subtitle">
+					{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+				</div>
+				{# title #}
+				{% set element = block.slots.getSlot('title') %}
+				<div class="home-hero__text-title">
+					{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+				</div>
+				{# paragraph #}
+				{% set element = block.slots.getSlot('paragraph') %}
+				<div class="home-hero__text-paragraph">
+					{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+				</div>
+			</div>
+			<img class="home-hero__ornament" src="{{ asset('bundles/thstarterplugin/pumpkin-ornament.png', 'asset') }}">
+		</div>
+		<div class="col-12 home-hero__bottom">
+			<div class="row">
+				<div class="col-lg-6 offset-lg-6">
+					<div class="home-hero__text-animation">
+						<span>
+							{% sw_include '@ThStarterPlugin/storefront/block/icon-down-white.html.twig' %}
+						</span>
+						<span class="home-hero__text-animation-label">Shop the seeds</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{# TODO: responsive, refactor, and styling #}

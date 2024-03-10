@@ -1,0 +1,27 @@
+// GP video styling layout
+.gp-video {
+  aspect-ratio: 16/9;
+
+  &__wrapper {
+    --plyr-color-main: #f97231;
+
+    .plyr__controls {
+      display: none;
+    }
+
+    .plyr--full-ui.plyr--video .plyr__control--overlaid {
+      --plyr-control-icon-size: 60px;
+      border: solid 10px white;
+      width: 125px;
+      height: 125px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @media screen and (max-width: 991px) {
+        width: 80px;
+        height: 80px;
+        border-width: 6px;
+      }
+    }
+  }
+}

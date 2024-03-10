@@ -1,0 +1,6 @@
+// <plugin root>/src/Resources/app/administration/src/module/sw-cms/blocks/text-image/gp-product/component/sw-cms-block-gp-product.scss
+.sw-cms-block-gp-product {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 40px;
+}

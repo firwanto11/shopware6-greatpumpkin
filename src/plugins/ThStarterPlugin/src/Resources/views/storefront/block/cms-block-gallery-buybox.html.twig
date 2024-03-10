@@ -1,0 +1,63 @@
+{% block block_gallery_buybox %}
+	<style>
+		.magnifier-zoom-image {
+			height:500px !important;
+			width:500px !important;
+		}
+	</style>
+	{% block block_gallery_buybox_column_left %}
+		{% set element = block.slots.getSlot('left') %}
+		{% set config = element.fieldConfig.elements %}
+
+		<div class="col-lg-6 product-detail-media" data-cms-element-id="{{ element.id }}">
+			{% block block_gallery_buybox_column_left_inner %}
+				{% sw_include '@Storefront/storefront/element/cms-element-' ~ element.type ~ '.html.twig' ignore missing
+                    with {
+                    isProduct: config.sliderItems.value == 'product.media' and config.sliderItems.source == 'mapped',
+                    startIndexThumbnails: 1,
+                    startIndexSlider: 1
+                } %}
+			{% endblock %}
+		</div>
+	{% endblock %}
+
+	{% block block_gallery_buybox_column_right %}
+		{% set element = block.slots.getSlot('right') %}
+		{% set product = page.product %}
+
+		<div
+			class="col-lg-6 product-detail-buy" data-cms-element-id="{{ element.id }}">
+			{# Product name #}
+
+			<div class="gp-pdp__name">
+				<h1>{{product.name}}</h1>
+				{% if product.translated.customFields.custom_product_meta_subtitle is not empty %}
+					<h2 class="h4">
+						{{ product.translated.customFields.custom_product_meta_subtitle }}
+					</h2>
+				{% endif %}
+
+			</div>
+			{# product price #}
+			<div class="gp-pdp__price">
+				{% block buy_widget_price %}
+					<div class="product-detail-price-container">
+						{% sw_include '@Storefront/storefront/component/buy-widget/buy-widget-price.html.twig' %}
+					</div>
+				{% endblock %}
+			</div>
+			<div class="gp-pdp__origin">
+				{% block block_gallery_buybox_column_right_inner %}
+					{% sw_include '@Storefront/storefront/element/cms-element-' ~ element.type ~ '.html.twig' ignore missing %}
+				{% endblock %}
+			</div>
+			{# product description #}
+			<div class="gp-pdp__description">
+				<div class="gp-pdp__description-content">
+					<p>{{ product.description|nl2br }}</p>
+				</div>
+			</div>
+		</div>
+
+	{% endblock %}
+{% endblock %}

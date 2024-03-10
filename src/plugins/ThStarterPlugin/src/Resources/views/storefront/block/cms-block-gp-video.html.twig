@@ -1,0 +1,9 @@
+{% set element = block.slots.getSlot('video') %}
+{% set videoId = element.config.videoID.value %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.js"></script>
+<div class="gp-video">
+	<div class="gp-video__wrapper">
+		<div id="player" data-plyr-provider="youtube" data-plyr-embed-id="{{videoId}}"></div>
+	</div>
+</div>

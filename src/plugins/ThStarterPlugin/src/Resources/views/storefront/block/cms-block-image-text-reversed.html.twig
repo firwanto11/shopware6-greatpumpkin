@@ -1,0 +1,22 @@
+<div class="gp-tm">
+	<div class="gp-tm__wrapper container">
+		<div class="row">
+			{% set element = block.slots.getSlot('left') %}
+			{% set id = element.id %}
+			<div class="col-md-6 col-12">
+				<div class="gp-tm__text" data-cms-element-id="{{ id }}">
+					{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+				</div>
+			</div>
+
+			{% set element = block.slots.getSlot('right') %}
+			<div class="col-md-6 col-12">
+				<div class="gp-tm__image" data-cms-element-id="{{ id }}">
+					{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{# TODO: responsive, refactor, and styling #}

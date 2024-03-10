@@ -1,0 +1,83 @@
+<div class="consultation-form">
+	<div class="container">
+		<div class="arrow-down arrow-down--white">
+			<div class="arrow-down__wrapper">
+				<span>
+					{% sw_include '@ThStarterPlugin/storefront/block/icon-down-white.html.twig' %}
+				</span>
+				<span class="arrow-down__label">Questionnaire</span>
+			</div>
+		</div>
+		{% set element = block.slots.getSlot('title') %}
+		{# title #}
+		<div class="consultation-form__description">
+			{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+		</div>
+		<div class="consultation-form__wrapper">
+			<form enctype="multipart/form-data" method="post" name="fileinfo" id="fileinfo">
+				<div class="consultation-form__field">
+					<label for="yearsCount">1. How many years have you been growing ?</label>
+					<input placeholder="Enter text here" type="number" name="yearsCount" id="yearsCount" required data-validation="text">
+					<span class="error-message">This field is required</span>
+				</div>
+				<div class="consultation-form__field">
+					<label for="personalBest">2. What is your personal best ?</label>
+					<input placeholder="Enter text here" type="text" name="personalBest" id="personalBest" required data-validation="text">
+					<span class="error-message">This field is required</span>
+				</div>
+				<div class="consultation-form__field">
+					<label for="goals">3. What is your goal ?</label>
+					<input placeholder="Enter text here" type="text" name="goals" id="goals" required data-validation="text">
+					<span class="error-message">This field is required</span>
+				</div>
+				<div class="consultation-form__field">
+					<label for="plantsCount">4. How many plants do you grow ?</label>
+					<input placeholder="Enter text here" type="number" name="plantsCount" id="plantsCount">
+					<span class="error-message">This field is required</span>
+				</div>
+				<div class="consultation-form__field">
+					<label for="area">5. How big of an area for each plant or total size (square foot or dimensions) ?</label>
+					<input placeholder="Enter text here" type="text" name="area" id="area">
+					<span class="error-message">This field is required</span>
+				</div>
+				<div class="consultation-form__field">
+					<label for="soil">6. Tell me about what you have done to the soil ?</label>
+					<textarea name="soil" id="soil"></textarea>
+					<span class="error-message">This field is required</span>
+				</div>
+				<div class="consultation-form__field">
+					<label for="growingProcess">7. Briefly tell me about your growing process. (For example; are you burying vines, what are you feeding, how, and how often)</label>
+					<textarea name="growingProcess" id="growingProcess"></textarea>
+					<span class="error-message">This field is required</span>
+				</div>
+				<div class="consultation-form__field">
+					<label for="otherMessage">8. Anything else that would be of noteworthy interest to help the consultation ?</label>
+					<textarea name="otherMessage" id="otherMessage"></textarea>
+					<span class="error-message">This field is required</span>
+				</div>
+				<div class="consultation-form__field consultation-form__field--upload">
+					<label for="pictures">9. Please send a few pictures of the plants throughout the season.</label>
+					<button>
+						<span>
+							<svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<g clip-path="url(#clip0_482_3471)">
+									<path d="M7.9956 15.9957C6.46441 15.9957 4.93322 15.9957 3.40203 15.9957C1.47451 15.9957 0.00247031 14.5243 0.0012207 12.6008C0.0012207 11.2994 0.0012207 9.99792 0.0012207 8.69648C0.0012207 8.03723 0.415464 7.59148 1.01465 7.60022C1.60134 7.60959 1.9981 8.04847 1.99872 8.69461C1.99872 9.97483 1.99872 11.2552 1.99872 12.5359C1.99872 13.4386 2.55605 13.9974 3.45639 13.998C6.48711 13.998 9.51825 13.998 12.5498 13.998C13.4326 13.998 13.9968 13.4361 13.9987 12.5621C13.9987 11.2711 13.9987 9.98003 13.9987 8.69149C13.9987 8.04909 14.403 7.60896 14.9909 7.60459C15.5789 7.60022 15.995 8.0416 15.9962 8.67775C15.9962 10.0206 16.0012 11.3622 15.9962 12.7063C15.9887 14.4912 14.4967 15.9907 12.7129 15.9988C11.1409 16.0032 9.56823 15.9957 7.9956 15.9957Z" fill="white"/>
+									<path d="M7.00034 3.41668L4.60172 5.81521C4.46176 5.95505 4.3243 6.09739 4.18122 6.23411C3.75198 6.64614 3.15842 6.65551 2.75604 6.2597C2.3443 5.85454 2.34867 5.24773 2.78104 4.81384C4.16227 3.4275 5.54642 2.04365 6.93349 0.662297C7.05845 0.537439 7.17966 0.407586 7.30837 0.287722C7.71824 -0.0899753 8.29182 -0.103085 8.68732 0.287722C10.2181 1.80517 11.7424 3.32886 13.2603 4.85879C13.4458 5.04672 13.549 5.30058 13.5472 5.56453C13.5453 5.82848 13.4387 6.0809 13.2506 6.26626C13.1575 6.35804 13.0471 6.43059 12.926 6.47978C12.8048 6.52896 12.6751 6.55382 12.5443 6.55292C12.2801 6.5511 12.0275 6.44451 11.842 6.25658C10.9672 5.39444 10.1019 4.52167 9.23215 3.65391C9.17467 3.59647 9.11343 3.54278 8.99909 3.4354V3.81685C8.99909 6.49132 8.99909 9.1662 8.99909 11.8415C8.99909 12.3172 8.74917 12.6737 8.32118 12.821C7.92318 12.959 7.4652 12.8541 7.23527 12.5008C7.0964 12.2852 7.01906 12.0359 7.01159 11.7797C6.99597 9.13645 7.00159 6.49257 7.00159 3.85118L7.00034 3.41668Z" fill="white"/>
+								</g>
+								<defs>
+									<clipPath id="clip0_482_3471">
+										<rect width="16" height="16" fill="white"/>
+									</clipPath>
+								</defs>
+							</svg>
+						</span>
+						<span>Add File</span>
+					</button>
+					<!-- TODO: add input file preview image when image uploaded -->
+					<input placeholder="Enter text here" type="file" name="pictures[]" multiple accept="image/png, image/gif, image/jpeg" id="pictures">
+				</div>
+				<button class="consultation-form__button">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>

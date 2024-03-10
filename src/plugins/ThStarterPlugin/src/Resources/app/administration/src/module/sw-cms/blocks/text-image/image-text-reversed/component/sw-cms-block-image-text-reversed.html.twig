@@ -1,0 +1,13 @@
+{# <plugin root>/src/Resources/app/administration/src/module/sw-cms/blocks/text-image/image-text-reversed/component/sw-cms-block-image-text-reversed.html.twig #}
+{% block sw_cms_block_image_text_reversed %}
+	<div class="sw-cms-block-image-text-reversed">
+		<slot name="left">
+			{% block sw_cms_block_image_text_reversed_slot_left %}{% endblock %}
+		</slot>
+		<slot name="right">
+			{% block sw_cms_block_image_text_reversed_slot_right %}{% endblock %}
+		</slot>
+	</div>
+{% endblock %}
+
+{# TODO: Admin styling for preview component & editor #}
