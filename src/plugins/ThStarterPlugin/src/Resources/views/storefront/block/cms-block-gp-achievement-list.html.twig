@@ -1,13 +1,51 @@
+<style>
+	.ccol
+	{
+		margin-bottom:20px;
+	}
+</style>
 <div class="gp-achievement-list">
 	<div class="row">
 		<div class="col-lg-6">
 
-			<div class="row gp-achievment-list__row">
-				{% set element = block.slots.getSlot('achievements') %}
-				{% if element %}
-					{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
-				{% endif %}
+
+
+			{% set element = block.slots.getSlot('achievements') %}
+
+			<div class="row">
+
+				<div class="col-md-4">
+					<img style="width:60%;margin-left:20%" src="/bundles/thstarterplugin/trophy.png?1707303441" alt="trophy.png?1707303441">
+				</div>
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-md-4 ccol">
+							<b>2023 WR Heaviest Pumpkin Ever</b> <br/> 2749 lbs
+						</div>
+						<div class="col-md-4 ccol">
+							<b>2023 WR Largest Pumpkin Circumference</b> <br/> 21 feet 1 inch
+						</div>
+						<div class="col-md-4 ccol">
+							<b>2023 WR Heaviest Jack O Lantern Carved</b> <br/> 2,749 lbs
+						</div>
+						<div class="col-md-4 ccol">
+							<b>2023 WR Largest Jack O Lantern Carved</b> <br/> 21 feet 1 inch 
+						</div>
+						<div class="col-md-4 ccol">
+							<b>2022 World Record Largest Jack O Lantern</b> <br/> Circumference 20’4” 
+						</div>
+						<div class="col-md-4 ccol">
+							<b>2020 World Record Largest Jack O Lantern</b> <br/> Weight 2,350 lbs
+						</div>
+						<div class="col-md-4 ccol">
+							<b>2020 World Record Largest Jack O Lantern</b> <br/> Circumference 19’10”<
+						</div>
+					</div>
+				</div>
 			</div>
+
+
+
 			<div class="gp-achievement-list__long-text">
 				{% set element = block.slots.getSlot('long-text') %}
 				{% if element %}
