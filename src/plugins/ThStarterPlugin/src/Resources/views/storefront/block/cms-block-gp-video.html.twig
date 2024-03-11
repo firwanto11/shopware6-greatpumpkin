@@ -2,8 +2,14 @@
 {% set videoId = element.config.videoID.value %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.js"></script>
-<div class="gp-video">
-	<div class="gp-video__wrapper">
+
+<div style="background-color:green" class="gp-video">
+
+
+		<iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{videoId}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+		<!--
 		<div id="player" data-plyr-provider="youtube" data-plyr-embed-id="{{videoId}}"></div>
-	</div>
+		-->
+
 </div>
