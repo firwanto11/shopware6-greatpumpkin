@@ -7,8 +7,8 @@
 					{% set name = item.translated.name %}
 					{% set id = item.id %}
 					{% set cover = item.cover.media %}
-					<div class="gp-products__item {% if true %}gp-products__item--digital{% endif %}">
-						{% if true %}
+					<div class="gp-products__item {% if name|lower == 'consultation service' %}gp-products__item--digital{% endif %}">
+						{% if name|lower == 'consultation service' %}
 							<a href="{{ seoUrl('frontend.detail.page', {'productId': item.id}) }}" class="gp-products__item-link" title="{{ item.name }}">
 								<div class="gp-products__item-wrapper">
 									<div class="gp-products__item-image">
@@ -55,7 +55,9 @@
 									</div>
 								</div>
 							</a>
+							ccc
 						{% else %}
+							aaa
 							<a href="{{ seoUrl('frontend.detail.page', {'productId': item.id}) }}" class="gp-products__item-link" title="{{ item.name }}">
 								<div class="gp-products__item-wrapper">
 
