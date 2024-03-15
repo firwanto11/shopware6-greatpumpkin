@@ -1,6 +1,10 @@
 go into docker terminal
 docker exec -it shop bash
 
+sudo chmod -R 777 custom/plugins/ThStarterTheme/src/Resources/app/storefront/dist
+sudo chmod -R 777 custom/plugins/ThStarterPlugin/src/Resources/app/storefront/dist
+bin/watch-storefront.sh
+
 adminer
 http://localhost/adminer.php?server=127.0.0.1&username=root
 
