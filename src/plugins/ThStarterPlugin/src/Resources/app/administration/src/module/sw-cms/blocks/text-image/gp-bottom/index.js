@@ -10,11 +10,7 @@ Shopware.Service('cmsService').registerCmsBlock({
 	component: 'sw-cms-block-gp-bottom',
 	previewComponent: 'sw-cms-preview-gp-bottom',
 	defaultConfig: {
-		marginBottom: '20px',
-		marginTop: '20px',
-		marginLeft: '20px',
-		marginRight: '20px',
-		sizingMode: 'boxed',
+		sizingMode: 'full_width',
 	},
 	slots: {
 		bottom: {
