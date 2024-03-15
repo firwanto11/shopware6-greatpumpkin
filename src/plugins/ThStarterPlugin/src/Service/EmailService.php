@@ -45,11 +45,39 @@ class EmailService
         $data->set('contentHtml', $messageHtml);
         $data->set('contentPlain', strip_tags($messageHtml));
 
+        dd($salesChannelContext->getSalesChannel()->getId());
         //set sales channel context
         $data->set('salesChannelId', $salesChannelContext->getSalesChannel()->getId());
 
         //send the e-mail
         $this->mailService->send($data->all(), $salesChannelContext->getContext(), []);
+
+    }
+
+    public function sendMail2(
+        array $recipients,
+        string $senderName,
+        string $subject,
+        string $messageHtml,
+        $context
+    )
+    {
+        $data = new DataBag();
+
+        //basic e-mail data
+        $data->set('recipients', $recipients);     //format: ['email address' => 'recipient name']
+        $data->set('senderName', $senderName);
+        $data->set('subject', $subject);
+        $data->set('contentHtml', $messageHtml);
+        $data->set('contentPlain', strip_tags($messageHtml));
+
+        //set sales channel context
+        //dd($context);
+        $data->set('salesChannelId', "018d8b4325a87009914b5c44c8badb7d");
+
+
+        //send the e-mail
+        $this->mailService->send($data->all(), $context, []);
 
     }
 
