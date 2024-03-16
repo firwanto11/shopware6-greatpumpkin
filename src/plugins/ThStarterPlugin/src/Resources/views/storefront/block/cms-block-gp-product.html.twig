@@ -48,7 +48,14 @@
 
 										<div class="gp-products__item-grid">
 											<div class="gp-products__item-price">
-												${{ item.calculatedPrice.unitPrice }}
+												${{ item.calculatedPrice.unitPrice }} 
+												{% if item.packUnit > 1 %} / {% endif %}
+												{% if item.purchaseUnit > 1 %}
+													{{ item.purchaseUnit }} {{ item.packUnitPlural }}
+												{% else %}
+													{{ item.packUnit }}
+												{% endif %}
+
 											</div>
 											<button class="gp-products__item-button">Buy Now</button>
 										</div>

@@ -18,3 +18,7 @@ bin/console theme:compile
     -to compile the theme 
 
 bin/console assets:install 
+
+
+original template
+https://github.com/shopware/shopware/tree/v6.5.8.3/src/Storefront/Resources/views/storefront
