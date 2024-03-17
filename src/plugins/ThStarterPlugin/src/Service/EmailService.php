@@ -45,7 +45,7 @@ class EmailService
         $data->set('contentHtml', $messageHtml);
         $data->set('contentPlain', strip_tags($messageHtml));
 
-        dd($salesChannelContext->getSalesChannel()->getId());
+        // dd($salesChannelContext->getSalesChannel()->getId());
         //set sales channel context
         $data->set('salesChannelId', $salesChannelContext->getSalesChannel()->getId());
 

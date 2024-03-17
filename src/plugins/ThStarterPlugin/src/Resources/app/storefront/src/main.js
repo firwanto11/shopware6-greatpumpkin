@@ -27,7 +27,7 @@ function contactFormSubmit() {
     watchFields(form);
     e.preventDefault();
     let hasError = isValidated(form);
-
+    console.log({hasError})
     if (hasError) {
       return;
     }
@@ -35,7 +35,14 @@ function contactFormSubmit() {
     // form submit
     const formData = new FormData(form);
 
-    fetch("https://shopware.blackhole.my.id/index.php", {
+    console.log({formData})
+
+    var btnSubmit = document.querySelector('.gp-cf__form .gp-cf__submit button');
+    btnSubmit.classList.add('disabled');
+    var prevText = btnSubmit.innerHTML;
+    btnSubmit.innerHTML = 'sending...';
+
+    fetch("/contact-form", {
       method: "POST",
       body: formData,
     })
@@ -50,9 +57,13 @@ function contactFormSubmit() {
         } else {
           alert("Something went wrong. Please try again later");
         }
+        btnSubmit.classList.remove('disabled');
+        btnSubmit.innerHTML = prevText;
       })
       .catch(function (error) {
         alert("Something went wrong. Please try again later");
+        btnSubmit.classList.remove('disabled');
+        btnSubmit.innerHTML = prevText;
       });
   });
 }

@@ -7,9 +7,9 @@
         <title>Minimal configuration</title>
 
         <input-field type="text">
-            <name>textField</name>
-            <label>Test field with default value</label>
-            <defaultValue>test</defaultValue>
+            <name>contactEmail</name>
+            <label>Contact Form Email</label>
+            <defaultValue>info@greatpumpkinseeds.com</defaultValue>
         </input-field>
     </card>
 

@@ -14,23 +14,42 @@
 			</div>
 			<div class="col-12 col-lg-6">
 				<div class="gp-cf__form">
-					<form action="http://localhost:81/index.php" method="post">
+					<form action="/contact-us" method="post">
 						<div class="gp-cf__fields">
 							<div class="gp-cf__field">
+								<label for="b068931cc450442b63f5b3d276ea4297">Name
+									<span>*</span>
+								</label>
+								<input type="text" required name="b068931cc450442b63f5b3d276ea4297" id="b068931cc450442b63f5b3d276ea4297" data-validation="text">
+								<span class="error-message">This field is required</span>
+							</div>
+							<div class="gp-cf__field">
+								<label for="0c83f57c786a0b4a39efab23731c7ebc">Email
+									<span>*</span>
+								</label>
+								<input type="email" required name="0c83f57c786a0b4a39efab23731c7ebc" id="0c83f57c786a0b4a39efab23731c7ebc" data-validation="text">
+								<span class="error-message">This field is required</span>
+							</div>
+							<div class="gp-cf__field">
+								<label for="78e731027d8fd50ed642340b7c9a63b3">Message</label>
+								<textarea name="78e731027d8fd50ed642340b7c9a63b3" id="78e731027d8fd50ed642340b7c9a63b3"></textarea>
+							</div>
+
+							<div class="gp-cf__field gp-cf__field__hp">
 								<label for="name">Name
 									<span>*</span>
 								</label>
-								<input type="text" required name="name" id="name" data-validation="text">
+								<input type="text" name="name" id="name">
 								<span class="error-message">This field is required</span>
 							</div>
-							<div class="gp-cf__field">
-								<label for="email">Email
+							<div class="gp-cf__field gp-cf__field__hp">
+								<label for="subject">Email
 									<span>*</span>
 								</label>
-								<input type="email" required name="email" id="email" data-validation="text">
+								<input name="subject" id="subject">
 								<span class="error-message">This field is required</span>
 							</div>
-							<div class="gp-cf__field">
+							<div class="gp-cf__field gp-cf__field__hp">
 								<label for="message">Message</label>
 								<textarea name="message" id="message"></textarea>
 							</div>
