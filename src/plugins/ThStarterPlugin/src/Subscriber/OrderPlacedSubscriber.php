@@ -64,7 +64,7 @@ class OrderPlacedSubscriber implements EventSubscriberInterface
                 }
             }
         }
-        $messageHtml = "Order ID: {$orderNumber} with consultation service has been plaecd";
+        $messageHtml = "Order ID: {$orderNumber} with consultation service has been placed";
         /*
         $this->emailService->sendMail2(
             $recipients,

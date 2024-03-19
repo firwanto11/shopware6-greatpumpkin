@@ -29,7 +29,7 @@
         {% endblock %}
 
         {% block page_checkout_confirm_tos %}
-            <div class="confirm-tos">
+            <div class="confirm-tos" style="display:none">
                 <div class="card checkout-card">
                     <div class="card-body">
                         {% block page_checkout_confirm_tos_header %}
@@ -50,9 +50,10 @@
                         {% endblock %}
 
                         {% block page_checkout_confirm_tos_control %}
-                            <div class="form-check">
+                            <div class="form-check"  style="display:none">
                                 {% block page_checkout_confirm_tos_control_checkbox %}
                                     <input type="checkbox"
+                                           checked
                                            class="checkout-confirm-tos-checkbox form-check-input{% if formViolations.getViolations('/tos') is not empty %} is-invalid{% endif %}"
                                            required="required"
                                            id="tos"

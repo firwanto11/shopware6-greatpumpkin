@@ -2,7 +2,7 @@
   "name": "th-starter-plugin/th-starter-plugin",
   "description": "Think11 Starter Plugins",
   "type": "shopware-platform-plugin",
-  "version": "1.0.34",
+  "version": "1.0.35",
   "license": "MIT",
   "require": {
     "shopware/core": "6.5.*"
