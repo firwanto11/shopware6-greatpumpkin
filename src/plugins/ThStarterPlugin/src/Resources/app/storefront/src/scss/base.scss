@@ -338,3 +338,32 @@ a:hover {
   pointer-events: none;
   color: #bbb;
 }
+
+.gp-affiliate__item-footer
+{
+  position:absolute;
+  bottom:0px;
+  width:100%;
+  text-align:right;
+  padding-bottom: 20px;
+  padding-right: 30px
+}
+
+.gp-affiliate__item-content
+{
+  height:400px;
+}
+
+.gpCode
+{
+  padding-top: 11px;
+  text-align: center;
+  background-color: #d1e1c3;
+  height: 40px;
+  color: #709254;
+  font-weight: bold;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  bottom: 85px;
+}
