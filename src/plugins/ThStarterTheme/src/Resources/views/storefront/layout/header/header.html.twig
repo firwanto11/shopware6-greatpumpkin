@@ -62,8 +62,17 @@
 		</div>
 	</div>
 	{# Share badge #}
-	<div class="share-badge">
+
+	<div style="position: fixed;left: 0;top: 340px;z-index: 99;">
+		<!--
+		<img src="/bundles/thstarterplugin/share_2.png">
+		-->
+	</div>
+	<div class="share-badge" style="display:flex;left:-30px">
 		<div class="share-badge__wrapper">
+
+
+
 			<ul class="share-badge__icon">
 				<li
 					class="share-badge__item">
@@ -98,5 +107,26 @@
 				</li>
 			</ul>
 		</div>
+		<div id="arrow" style="background-color:#f97231;color:#FFFFFF;height:35px;margin-top:auto;margin-bottom:auto;border-radius:0px 30px 30px 0px;font-size:20px;font-weight:bold;width:20px">
+		   >
+		</div>
 	</div>
+	<script>
+		document.getElementById('arrow').addEventListener('click', function() {
+			var shareBadge = document.querySelector('.share-badge');
+			var currentLeft = parseInt(shareBadge.style.left) || 0;
+			var targetLeft = currentLeft === 0 ? -30 : 0;
+			shareBadge.style.transition = 'left 0.5s ease';
+			shareBadge.style.left = targetLeft + 'px';
+
+			var arrow = document.getElementById('arrow');
+			 if (shareBadge.style.left === '0px') {
+				//shareBadge.style.left = '-30px';
+				arrow.innerHTML = '<';
+			} else {
+				//shareBadge.style.left = '0px';
+				arrow.innerHTML = '>';
+			}
+		});
+	</script>
 {% endblock %}
