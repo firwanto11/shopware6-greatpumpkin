@@ -5,10 +5,20 @@
 
 {% block page_checkout_confirm_form_submit %}
     {{ parent() }}
-
+    <style>
+        .confirm-tos
+        {
+            display:none !important;
+        }
+    </style>
     {% block page_checkout_confirm_form_submit_paypal_container %}
         {% sw_include '@SwagPayPal/storefront/component/ecs-spb-checkout/ecs-spb-data.html.twig' %}
     {% endblock %}
+
+    <script>
+        document.getElementById("revocation").checked = true;
+        document.getElementById("tos").checked = true;
+    </script>
 {% endblock %}
 
 {# @deprecated tag:v9.0.0 - Will be removed without replacement #}

@@ -3,7 +3,7 @@
   "description": "Great Pumpkins Theme",
   "type": "shopware-platform-plugin",
   "license": "MIT",
-  "version": "1.0.21",
+  "version": "1.0.34",
   "autoload": {
     "psr-4": {
       "ThStarterTheme\\": "src/"

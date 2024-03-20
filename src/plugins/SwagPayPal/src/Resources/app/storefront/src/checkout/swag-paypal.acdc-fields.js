@@ -228,7 +228,7 @@ export default class SwagPaypalAcdcFields extends SwagPaypalAbstractButtons {
         this.cardFieldForm = DomAccess.querySelector(document, this.options.cardFieldFormSelector);
 
         const cardFields = paypal.CardFields(this.getFieldConfig());
-
+        //console.log("eligible",cardFields.isEligible());
         if (cardFields.isEligible()) {
             this.cardFieldForm.classList.remove('d-none');
             this.renderIndividualFields(cardFields)
