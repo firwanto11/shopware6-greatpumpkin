@@ -14,7 +14,7 @@
 			</div>
 			<div class="col-12 col-lg-6">
 				<div class="gp-cf__form">
-					<form action="/contact-us" method="post">
+					<form action="/contact-us" method="post" id="contact-form">
 						<div class="gp-cf__fields">
 							<div class="gp-cf__field">
 								<label for="b068931cc450442b63f5b3d276ea4297">Name
@@ -54,8 +54,17 @@
 								<textarea name="message" id="message"></textarea>
 							</div>
 						</div>
+
+					    {% set captchas = config('core.basicInformation.activeCaptchasV2') %}
 						<div class="gp-cf__submit">
-							<button>Send message</button>
+							<div id="recaptcha" class="g-recaptcha"
+								data-sitekey="{{captchas.googleReCaptchaV2.config.siteKey}}"
+								data-callback="contact_form__onSubmit"
+								data-size="invisible">
+							</div>
+							<button id="submit">submit</button>
+							{# <button class="g-recaptcha" data-sitekey="{{captchas.googleReCaptchaV2.config.siteKey}}" data-callback="onContactFormSubmitCallback">Send message</button> #}
+							{# <button onclick="onContactFormSubmitCallback">Send message</button> #}
 						</div>
 					</form>
 				</div>

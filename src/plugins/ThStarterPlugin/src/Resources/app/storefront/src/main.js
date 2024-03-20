@@ -16,6 +16,7 @@ function initVideoPlyr() {
 }
 
 // TODO: Add recaptcha handler
+// NOT USED ANYMORE
 function contactFormSubmit() {
   const form = document.querySelector(".gp-cf__form form");
   if (!form) {
@@ -23,6 +24,7 @@ function contactFormSubmit() {
   }
 
   form.addEventListener("submit", function (e) {
+    console.log('contactFormSubmit');
     watchFields(form);
     e.preventDefault();
     let hasError = isValidated(form);
@@ -35,35 +37,36 @@ function contactFormSubmit() {
     const formData = new FormData(form);
 
     console.log({formData})
+    alert('done');
 
-    var btnSubmit = document.querySelector('.gp-cf__form .gp-cf__submit button');
-    btnSubmit.classList.add('disabled');
-    var prevText = btnSubmit.innerHTML;
-    btnSubmit.innerHTML = 'sending...';
+    // var btnSubmit = document.querySelector('.gp-cf__form .gp-cf__submit button');
+    // btnSubmit.classList.add('disabled');
+    // var prevText = btnSubmit.innerHTML;
+    // btnSubmit.innerHTML = 'sending...';
 
-    fetch("/contact-form", {
-      method: "POST",
-      body: formData,
-    })
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        // handle the response and UI element here
-        if (data.success) {
-          form.reset();
-          alert("Your message has been sent successfully");
-        } else {
-          alert("Something went wrong. Please try again later");
-        }
-        btnSubmit.classList.remove('disabled');
-        btnSubmit.innerHTML = prevText;
-      })
-      .catch(function (error) {
-        alert("Something went wrong. Please try again later");
-        btnSubmit.classList.remove('disabled');
-        btnSubmit.innerHTML = prevText;
-      });
+    // fetch("/contact-form", {
+    //   method: "POST",
+    //   body: formData,
+    // })
+    //   .then(function (response) {
+    //     return response.json();
+    //   })
+    //   .then(function (data) {
+    //     // handle the response and UI element here
+    //     if (data.success) {
+    //       form.reset();
+    //       alert("Your message has been sent successfully");
+    //     } else {
+    //       alert("Something went wrong. Please try again later");
+    //     }
+    //     btnSubmit.classList.remove('disabled');
+    //     btnSubmit.innerHTML = prevText;
+    //   })
+    //   .catch(function (error) {
+    //     alert("Something went wrong. Please try again later");
+    //     btnSubmit.classList.remove('disabled');
+    //     btnSubmit.innerHTML = prevText;
+    //   });
   });
 }
 
@@ -163,10 +166,72 @@ function watchFields(form) {
   });
 }
 
+
+
+// contact form recaptcha handler
+window.contact_form__onSubmit = function (token) {
+  // console.log('contact_form__onSubmit', token);
+  const form = document.querySelector(".gp-cf__form form");
+  const formData = new FormData(form);
+
+  var btnSubmit = document.querySelector('.gp-cf__form .gp-cf__submit button');
+  btnSubmit.classList.add('disabled');
+  var prevText = btnSubmit.innerHTML;
+  btnSubmit.innerHTML = 'sending...';
+
+  fetch("/contact-form", {
+    method: "POST",
+    body: formData,
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      // handle the response and UI element here
+      if (data.success) {
+        form.reset();
+        alert("Your message has been sent successfully");
+      } else {
+        alert("Something went wrong. Please try again later");
+      }
+      btnSubmit.classList.remove('disabled');
+      btnSubmit.innerHTML = prevText;
+    })
+    .catch(function (error) {
+      alert("Something went wrong. Please try again later");
+      btnSubmit.classList.remove('disabled');
+      btnSubmit.innerHTML = prevText;
+    });
+}
+
+function contact_form__validate(event) {
+  // console.log('contact_form__validate');
+  event.preventDefault();
+
+  const form = document.querySelector(".gp-cf__form form");
+  watchFields(form);
+  let hasError = isValidated(form);
+  // console.log({hasError})
+  if (hasError) {
+    return;
+  } else {
+    // console.log({grecaptcha});
+    grecaptcha.execute();
+  }
+}
+
+function contact_form__onload() {
+  // console.log('contact_form__onload');
+  var element = document.getElementById('submit');
+  element.onclick = contact_form__validate;
+}
+
+
 window.addEventListener("DOMContentLoaded", () => {
   contactFormSubmit();
   initVideoPlyr();
   isNewsPage();
   toggleProductDescription();
   consultationFormSubmit();
+  contact_form__onload();
 });
