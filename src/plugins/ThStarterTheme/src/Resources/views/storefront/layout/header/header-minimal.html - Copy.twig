@@ -1,0 +1,101 @@
+{% sw_extends '@Storefront/storefront/layout/header/header.html.twig' %}
+
+{% block layout_header %}
+    <style>
+       .theader
+       {
+            background: url("/bundles/thstarterplugin/header_orange_checkout.png?x=1312313");
+            height:600px;
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align:center;
+       }
+       .ttitle
+       {
+            color:#FFFFFF;
+       }
+       .tcontent {
+            height:100%;
+            width:100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding:5px;
+       }
+       .leftCol
+       {
+            text-align:right;
+       }
+       .rightCol
+       {
+            text-align:left;
+       }
+
+       .bButton
+       {
+            font-size: 17px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 30px;
+            width:200px;
+            height:40px;
+       }
+       .buttonT {
+
+                color: white;
+                background-color: #8cbc6e;
+                border: none;
+       }
+       .buttonH {
+
+                color: #fc9e70;
+                background-color: #ffcab0;
+                border: none;
+
+       }
+
+       @media (max-width: 768px) {
+            .theader {
+                background-size: cover;
+                background-position: left;
+            }
+            .leftCol
+            {
+                    text-align:center;
+            }
+            .rightCol
+            {
+                    text-align:center;
+                    margin-top:20px;
+            }
+
+
+        }
+    </style>
+    <header class="header-minimal">
+
+        {% block layout_header_minimal_inner %}
+            <div class="theader">
+                <div class="tcontent">
+                    <div class="ttitle" style="font-size:40px;font-weight:bold">Thank you for shopping</div>
+                    <p class="ttitle">If you have any further inquiries or require assistance,<br/> please don't hesitate to reach out</p>
+                    <div class="row" style="width:100%">
+                        <div class="col-md-6 col-12 leftCol">
+                            <button onclick="window.location='/shop'" class="buttonT bButton">
+                                Back to shop
+                            </button>
+                        </div>
+                        <div class="col-md-6 col-12 rightCol">
+                            <button onclick="window.location='/'" class="buttonH bButton">
+                                Back to home
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+
+    </header>
+{% endblock %}
