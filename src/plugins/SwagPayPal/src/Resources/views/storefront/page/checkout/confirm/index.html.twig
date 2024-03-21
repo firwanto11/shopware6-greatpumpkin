@@ -16,8 +16,19 @@
     {% endblock %}
 
     <script>
-        document.getElementById("revocation").checked = true;
-        document.getElementById("tos").checked = true;
+        try {
+            document.getElementById("revocation").checked = true;
+        }
+        catch(err) {
+            //document.getElementById("demo").innerHTML = err.message;
+        }
+        try {
+            document.getElementById("tos").checked = true;
+        }
+        catch(err) {
+            //document.getElementById("demo").innerHTML = err.message;
+        }
+
     </script>
 {% endblock %}
 

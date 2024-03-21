@@ -9,12 +9,13 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use ThStarterPlugin\Service\EmailService;
 use Shopware\Core\System\SystemConfig\SystemConfigService;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 #[Route(defaults: ['_routeScope' => ['storefront']])]
 class ExampleController extends StorefrontController
 {
     /**
-    * @var EmailService 
+    * @var EmailService
     */
     private $emailService;
     private $systemConfig;
@@ -23,6 +24,12 @@ class ExampleController extends StorefrontController
     {
         $this->emailService = $emailService;
         $this->systemConfig = $systemConfig;
+    }
+
+    #[Route(path: '/form', name: 'frontend.example.form', methods: ['GET'])]
+    public function showForm(Request $request, SalesChannelContext $context): Response
+    {
+        return new RedirectResponse('https://forms.gle/wbzxXHfmB72nj84w9');
     }
 
 
@@ -72,7 +79,7 @@ class ExampleController extends StorefrontController
             $name = $request->get(md5('name'), '');
             $email = $request->get(md5('email'), '');
             $message = $request->get(md5('message'), '');
-    
+
             // $email = 'info@greatpumpkinseeds.com';
             $html = $this->renderView('@ThStarterPlugin/email/contact.html.twig', [
                 'name' => $name,
@@ -97,13 +104,13 @@ class ExampleController extends StorefrontController
 
             try {
                 $this->emailService->sendMail(
-                    $toEmail, 
-                    $name, 
-                    'New Contact Form - '.$context->getSalesChannel()->getName(), 
-                    $html, 
+                    $toEmail,
+                    $name,
+                    'New Contact Form - '.$context->getSalesChannel()->getName(),
+                    $html,
                     $context
                 );
-                
+
                 $body = [
                     'success' => true,
                     'html' => $html
@@ -116,7 +123,7 @@ class ExampleController extends StorefrontController
                 ];
             }
         }
-       
+
         $response = new Response(json_encode($body));
         $response->headers->set('Content-Type', 'application/json');
         return $response;
@@ -131,6 +138,6 @@ class ExampleController extends StorefrontController
         // $response = new Response(json_encode($message));
         // $response->headers->set('Content-Type', 'application/json');
         // return $response;
-       
+
     }
 }
