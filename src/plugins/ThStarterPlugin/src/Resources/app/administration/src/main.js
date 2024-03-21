@@ -10,3 +10,4 @@ import "./module/sw-cms/blocks/text-image/gp-affiliate";
 import "./module/sw-cms/blocks/text-image/gp-contact";
 import "./module/sw-cms/blocks/text-image/gp-consultation";
 import "./module/sw-cms/blocks/text-image/gp-bottom";
+import "./module/sw-cms/elements/video";

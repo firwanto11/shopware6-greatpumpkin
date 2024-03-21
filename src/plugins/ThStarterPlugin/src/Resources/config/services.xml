@@ -26,11 +26,14 @@
             </call>
         </service>
 
-         <service id="ThStarterPlugin\Subscriber\OrderPlacedSubscriber">
+        <service id="ThStarterPlugin\Subscriber\OrderPlacedSubscriber">
             <argument type="service" id="logger"/>
             <argument type="service" id="ThStarterPlugin\Service\EmailService"/>
             <tag name="kernel.event_subscriber"/>
         </service>
 
+        <service id="ThStarterPlugin\DataResolver\VideoCmsElementResolver">
+            <tag name="shopware.cms.data_resolver" />
+        </service>
     </services>
 </container>

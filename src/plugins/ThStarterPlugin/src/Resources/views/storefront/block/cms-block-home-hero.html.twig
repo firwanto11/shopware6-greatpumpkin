@@ -1,8 +1,8 @@
 <div class="home-hero__container">
 	<div class="row">
-		<div class="col-12 col-lg-6 home-hero__image-column" data-cms-element-id="{{ id }}">
-			<div class="home-hero__image-wrapper">
-				{% set element = block.slots.getSlot('media') %}
+		<div class="col-12 col-lg-6 home-hero__video-column" data-cms-element-id="{{ id }}">
+			<div class="home-hero__video-wrapper">
+				{% set element = block.slots.getSlot('video') %}
 				{# Image #}
 				{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
 				<div class="home-hero__badge-wrapper">

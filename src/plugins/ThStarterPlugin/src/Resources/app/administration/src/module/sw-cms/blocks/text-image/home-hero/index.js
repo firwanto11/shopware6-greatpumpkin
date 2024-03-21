@@ -41,8 +41,16 @@ Shopware.Service('cmsService').registerCmsBlock({
             },
         },
     },
-    media: {
-        type: 'image',
+    // media: {
+    //     type: 'image',
+    //     default: {
+    //         config: {
+    //             displayMode: { source: 'static', value: 'cover' },
+    //         },
+    //     },
+    // },
+    video: {
+        type: 'video',
         default: {
             config: {
                 displayMode: { source: 'static', value: 'cover' },
