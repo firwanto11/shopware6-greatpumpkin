@@ -7,3 +7,4 @@ src/public.zip
 
 .env.local
 /src/.env.local
+src/plugins/*.zip
