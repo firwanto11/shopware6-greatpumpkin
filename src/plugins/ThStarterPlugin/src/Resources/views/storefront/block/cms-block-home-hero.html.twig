@@ -2,9 +2,16 @@
 	<div class="row">
 		<div class="col-12 col-lg-6 home-hero__video-column" data-cms-element-id="{{ id }}">
 			<div class="home-hero__video-wrapper">
-				{% set element = block.slots.getSlot('video') %}
-				{# Image #}
-				{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+				<div class="cms-element-video">
+                    <div class="cms-video-container">
+						<video preload="yes" loop autoplay muted playsinline>
+                    		<source src="{{ asset('bundles/thstarterplugin/videos/great_pumpkin_world_record.mov', 'asset') }}" type="video/mp4">
+                    		{# <source src="{{ asset('bundles/thstarterplugin/videos/great_pumpkin_world_record.ogv', 'asset') }}" type="video/ogg"> #}
+                    		<source src="{{ asset('bundles/thstarterplugin/videos/great_pumpkin_world_record.webm', 'asset') }}" type="video/webm">
+                    		Your browser does not support the video tag.
+                		</video>
+                    </div>
+            	</div>
 				<div class="home-hero__badge-wrapper">
 					<img class="home-hero__badge" src="{{ asset('bundles/thstarterplugin/gwr-logo.png', 'asset') }}">
 				</div>

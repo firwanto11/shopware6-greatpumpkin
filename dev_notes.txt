@@ -1,3 +1,5 @@
+docker-compose up
+
 go into docker terminal
 docker exec -it shop bash
 
