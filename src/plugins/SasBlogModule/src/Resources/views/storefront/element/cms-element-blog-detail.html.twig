@@ -79,7 +79,7 @@
 
                 {% block sas_blog_detail_article_blocks_cms %}
                     {% if element.data.cmsPage %}
-                        <div class="row sas-blog-detail-cms">
+                        <div class="col-12 sas-blog-detail-cms">
                             {% set cmsPageClasses = ('cms-page ' ~ element.data.cmsPage.cssClass|striptags)|trim %}
                             <div class="{{ cmsPageClasses }}">
                                 {% block page_content_blocks %}

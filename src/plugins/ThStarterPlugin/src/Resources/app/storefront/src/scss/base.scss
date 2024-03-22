@@ -377,3 +377,12 @@ a:hover {
 .register-form .privacy-notice {
   display: none;
 }
+
+
+
+
+@media screen and (max-width: 480px) {
+  .is-act-confirmpage .checkout {
+    padding-top: 20px;
+  }
+}

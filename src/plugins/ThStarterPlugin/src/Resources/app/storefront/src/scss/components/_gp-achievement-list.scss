@@ -18,6 +18,13 @@
     padding-left: 40px;
     padding-right: 40px;
   }
+
+  @media screen and (max-width: 480px) {
+    padding-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
   .gp-achievement-list__row {
     align-items: center;
   }
