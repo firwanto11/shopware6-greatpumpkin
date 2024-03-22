@@ -378,7 +378,10 @@ a:hover {
   display: none;
 }
 
-
+// remove cookie privacy link
+.cookie-permission-content a {
+  display: none;
+}
 
 
 @media screen and (max-width: 480px) {
