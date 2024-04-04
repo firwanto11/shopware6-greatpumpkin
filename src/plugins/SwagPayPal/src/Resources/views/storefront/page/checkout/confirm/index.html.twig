@@ -5,31 +5,12 @@
 
 {% block page_checkout_confirm_form_submit %}
     {{ parent() }}
-    <style>
-        .confirm-tos
-        {
-            display:none !important;
-        }
-    </style>
+
     {% block page_checkout_confirm_form_submit_paypal_container %}
         {% sw_include '@SwagPayPal/storefront/component/ecs-spb-checkout/ecs-spb-data.html.twig' %}
     {% endblock %}
 
-    <script>
-        try {
-            document.getElementById("revocation").checked = true;
-        }
-        catch(err) {
-            //document.getElementById("demo").innerHTML = err.message;
-        }
-        try {
-            document.getElementById("tos").checked = true;
-        }
-        catch(err) {
-            //document.getElementById("demo").innerHTML = err.message;
-        }
 
-    </script>
 {% endblock %}
 
 {# @deprecated tag:v9.0.0 - Will be removed without replacement #}
